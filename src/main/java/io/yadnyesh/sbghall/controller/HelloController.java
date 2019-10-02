@@ -10,4 +10,9 @@ public class HelloController {
     public String returnHello() {
         return "Hello to you from GCP!";
     }
+
+    @GetMapping("/home")
+    public String returnHelloFromHome() {
+        return "Hello From Spring Boot";
+    }
 }
