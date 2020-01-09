@@ -17,7 +17,7 @@ import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
+//@Configuration
 public class KafkaConfig {
 
     @Autowired
