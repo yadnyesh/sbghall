@@ -8,9 +8,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -27,13 +24,9 @@ public class SbghallApplication {
 			ObjectMapper mapper = new ObjectMapper();
 			TypeReference<List<User>> typeReference = new TypeReference<List<User>>(){};
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/users.json");
-			try {
 				List<User> users = mapper.readValue(inputStream, typeReference);
 				userService.saveUsers(users);
-				System.out.println("All Users saved");
-			} catch(IOException e) {
-				System.out.println("Unable to save users: " + e.getMessage());
-			}
+
 		};
 	}
 
